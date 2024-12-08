@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Clean up
+        continue-on-error: true
         run: |
           docker stop web-nginx-1
           docker stop web-frontend-1
