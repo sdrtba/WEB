@@ -9,5 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run a one-line script
+      - name: Clean up
+        run: |
+          docker stop web-nginx-1
+          docker stop web-frontend-1
+          docker stop web-backend-1
+
+      - name: Build and up
         run: docker compose up --build
