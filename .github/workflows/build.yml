@@ -19,7 +19,4 @@ jobs:
           docker stop web-backend-1
 
       - name: Build and up
-        run: nohup docker compose up --build &>/dev/null &
-
-      - name: Check running containers
-        run: docker ps
+        run: docker compose up --build -d
